@@ -23,7 +23,7 @@ def get_visitas():
 
     query = """
     SELECT TOP 10 *
-    FROM TAB_REGISTRO_VISITA_SUPERVISAO
+    FROM TAB_REGISTRO_VISITA_SUPERVISAO_CABECALHO
     """
 
     cursor.execute(query)

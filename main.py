@@ -1,20 +1,15 @@
+import pymssql
 from fastapi import FastAPI
-import pyodbc
 
 app = FastAPI()
 
 def get_connection():
-    return pyodbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};"
-        "SERVER=pbdb3073.database.windows.net;"
-        "DATABASE=PBDB3073;"
-        "UID=admrs;"
-        "PWD=Gf3$Rn8!Qb12^KsW0tZ;"
+    return pymssql.connect(
+        server="pbdb3073.database.windows.net",
+        user="admrs",
+        password="Gf3$Rn8!Qb12^KsW0tZ",
+        database="PBDB3073"
     )
-
-@app.get("/")
-def root():
-    return {"status": "API ONLINE"}
 
 @app.get("/visitas")
 def get_visitas():
